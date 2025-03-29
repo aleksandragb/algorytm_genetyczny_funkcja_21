@@ -1,6 +1,8 @@
 import random
 from functions import himmelblau
 from utils import binary_to_real
+from plot import plot_progress
+from utils import save_results_to_csv
 
 MIN_VAL = -5
 MAX_VAL = 5
@@ -38,14 +40,16 @@ def mutate(chrom, mutation_rate=0.01):
             chrom_list[i] = '1' if chrom_list[i] == '0' else '0'
     return ''.join(chrom_list)
 
-def run_algorithm(pop_size, generations, variables=None):  # variables na razie ignorujemy
+
+def run_algorithm(pop_size, generations, variables=None):
     population = [generate_chromosome() for _ in range(pop_size)]
     best_solution = None
     best_fitness = float('inf')
+    progress = []
 
     for _ in range(generations):
         sorted_pop = selection(population)
-        new_population = sorted_pop[:2]  # strategia elitarna: top 2 przechodzą
+        new_population = sorted_pop[:2]  # elitarna strategia
 
         while len(new_population) < pop_size:
             parent1, parent2 = random.sample(sorted_pop[:10], 2)
@@ -58,9 +62,16 @@ def run_algorithm(pop_size, generations, variables=None):  # variables na razie 
 
         current_best = selection(population)[0]
         current_fitness = calculate_fitness(current_best)
+        progress.append(current_fitness)
+
         if current_fitness < best_fitness:
             best_fitness = current_fitness
             best_solution = current_best
 
     x, y = decode_chromosome(best_solution)
+
+    plot_progress(progress)
+    save_results_to_csv(progress)
+
     return f"x = {x:.4f}, y = {y:.4f}, f(x,y) = {best_fitness:.4f}"
+
