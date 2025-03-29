@@ -9,8 +9,9 @@ def start_algorithm():
         variables = int(var_entry.get())
         method = selection_method.get()
         cross_method = crossover_method.get()
+        mutation = mutation_method.get()
 
-        result = run_algorithm(population, generations, variables, method, cross_method)
+        result = run_algorithm(population, generations, variables, method, cross_method, mutation)
         result_label.config(text=f"Najlepszy wynik: {result}")
     except Exception as e:
         result_label.config(text=f"Błąd: {e}")
@@ -49,11 +50,17 @@ def create_gui():
     crossover_method.grid(row=4, column=1)
     crossover_method.current(0)
 
+    ttk.Label(window, text="Metoda mutacji:").grid(row=5, column=0, sticky="w")
+    global mutation_method
+    mutation_method = ttk.Combobox(window, values=["one_point", "two_point", "boundary", "none"])
+    mutation_method.grid(row=5, column=1)
+    mutation_method.current(0)
+
     start_btn = ttk.Button(window, text="Start", command=start_algorithm)
-    start_btn.grid(row=5, column=0, columnspan=2, pady=10)
+    start_btn.grid(row=6, column=0, columnspan=2, pady=10)
 
     global result_label
     result_label = ttk.Label(window, text="")
-    result_label.grid(row=6, column=0, columnspan=2)
+    result_label.grid(row=7, column=0, columnspan=2)
 
     window.mainloop()

@@ -78,15 +78,36 @@ def crossover(parent1, parent2, method="one_point"):
 
     return child1, child2
 
-def mutate(chrom, mutation_rate=0.01):
+def mutate(chrom, mutation_rate=0.01, method="one_point"):
     chrom_list = list(chrom)
-    for i in range(len(chrom_list)):
+
+    if method == "none":
+        return ''.join(chrom_list)
+
+    if method == "one_point":
+        for i in range(len(chrom_list)):
+            if random.random() < mutation_rate:
+                chrom_list[i] = '1' if chrom_list[i] == '0' else '0'
+
+    elif method == "two_point":
+        indices = random.sample(range(len(chrom_list)), 2)
+        for i in indices:
+            if random.random() < mutation_rate:
+                chrom_list[i] = '1' if chrom_list[i] == '0' else '0'
+
+    elif method == "boundary":
         if random.random() < mutation_rate:
-            chrom_list[i] = '1' if chrom_list[i] == '0' else '0'
+            chrom_list[0] = '1' if chrom_list[0] == '0' else '0'
+        if random.random() < mutation_rate:
+            chrom_list[-1] = '1' if chrom_list[-1] == '0' else '0'
+
+    else:
+        raise ValueError(f"Unknown mutation method: {method}")
+
     return ''.join(chrom_list)
 
 
-def run_algorithm(pop_size, generations, variables=None, selection_method="elitist", crossover_method="one_point"):
+def run_algorithm(pop_size, generations, variables=None, selection_method="elitist", crossover_method="one_point", mutation_method="one_point"):
     population = [generate_chromosome() for _ in range(pop_size)]
     best_solution = None
     best_fitness = float('inf')
@@ -99,8 +120,8 @@ def run_algorithm(pop_size, generations, variables=None, selection_method="eliti
         while len(new_population) < pop_size:
             parent1, parent2 = random.sample(sorted_pop[:10], 2)
             child1, child2 = crossover(parent1, parent2, method=crossover_method)
-            child1 = mutate(child1)
-            child2 = mutate(child2)
+            child1 = mutate(child1, method=mutation_method)
+            child2 = mutate(child2, method=mutation_method)
             new_population.extend([child1, child2])
 
         population = new_population[:pop_size]
