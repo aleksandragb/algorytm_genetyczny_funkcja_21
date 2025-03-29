@@ -106,8 +106,15 @@ def mutate(chrom, mutation_rate=0.01, method="one_point"):
 
     return ''.join(chrom_list)
 
+def inversion(chrom):
+    chrom_list = list(chrom)
+    start = random.randint(0, len(chrom_list) - 2)
+    end = random.randint(start + 1, len(chrom_list) - 1)
+    chrom_list[start:end + 1] = chrom_list[start:end + 1][::-1]
+    return ''.join(chrom_list)
 
-def run_algorithm(pop_size, generations, variables=None, selection_method="elitist", crossover_method="one_point", mutation_method="one_point"):
+
+def run_algorithm(pop_size, generations, variables=None, selection_method="elitist", crossover_method="one_point", mutation_method="one_point", use_inversion=False):
     population = [generate_chromosome() for _ in range(pop_size)]
     best_solution = None
     best_fitness = float('inf')
@@ -122,6 +129,11 @@ def run_algorithm(pop_size, generations, variables=None, selection_method="eliti
             child1, child2 = crossover(parent1, parent2, method=crossover_method)
             child1 = mutate(child1, method=mutation_method)
             child2 = mutate(child2, method=mutation_method)
+
+            if use_inversion:
+                child1 = inversion(child1)
+                child2 = inversion(child2)
+
             new_population.extend([child1, child2])
 
         population = new_population[:pop_size]

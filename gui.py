@@ -10,8 +10,9 @@ def start_algorithm():
         method = selection_method.get()
         cross_method = crossover_method.get()
         mutation = mutation_method.get()
+        use_inversion_flag = inversion_var.get()  # ← nowa linijka
 
-        result = run_algorithm(population, generations, variables, method, cross_method, mutation)
+        result = run_algorithm(population, generations, variables, method, cross_method, mutation, use_inversion_flag)
         result_label.config(text=f"Najlepszy wynik: {result}")
     except Exception as e:
         result_label.config(text=f"Błąd: {e}")
@@ -56,11 +57,17 @@ def create_gui():
     mutation_method.grid(row=5, column=1)
     mutation_method.current(0)
 
+    # Checkbox: Użyj inwersji
+    global inversion_var
+    inversion_var = tk.BooleanVar()
+    inversion_check = ttk.Checkbutton(window, text="Użyj operatora inwersji", variable=inversion_var)
+    inversion_check.grid(row=6, column=0, columnspan=2, sticky="w")
+
     start_btn = ttk.Button(window, text="Start", command=start_algorithm)
-    start_btn.grid(row=6, column=0, columnspan=2, pady=10)
+    start_btn.grid(row=7, column=0, columnspan=2, pady=10)
 
     global result_label
     result_label = ttk.Label(window, text="")
-    result_label.grid(row=7, column=0, columnspan=2)
+    result_label.grid(row=8, column=0, columnspan=2)
 
     window.mainloop()
