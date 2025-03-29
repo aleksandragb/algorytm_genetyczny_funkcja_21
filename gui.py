@@ -7,9 +7,10 @@ def start_algorithm():
         population = int(pop_entry.get())
         generations = int(gen_entry.get())
         variables = int(var_entry.get())
-        method = selection_method.get()  # ⬅ pobieramy wybraną metodę
+        method = selection_method.get()
+        cross_method = crossover_method.get()
 
-        result = run_algorithm(population, generations, variables, method)
+        result = run_algorithm(population, generations, variables, method, cross_method)
         result_label.config(text=f"Najlepszy wynik: {result}")
     except Exception as e:
         result_label.config(text=f"Błąd: {e}")
@@ -40,13 +41,19 @@ def create_gui():
     global selection_method
     selection_method = ttk.Combobox(window, values=["elitist", "roulette", "tournament"])
     selection_method.grid(row=3, column=1)
-    selection_method.current(0)  # domyślnie "elitist"
+    selection_method.current(0)
+
+    ttk.Label(window, text="Metoda krzyżowania:").grid(row=4, column=0, sticky="w")
+    global crossover_method
+    crossover_method = ttk.Combobox(window, values=["one_point", "two_point", "uniform", "none"])
+    crossover_method.grid(row=4, column=1)
+    crossover_method.current(0)
 
     start_btn = ttk.Button(window, text="Start", command=start_algorithm)
-    start_btn.grid(row=4, column=0, columnspan=2, pady=10)
+    start_btn.grid(row=5, column=0, columnspan=2, pady=10)
 
     global result_label
     result_label = ttk.Label(window, text="")
-    result_label.grid(row=5, column=0, columnspan=2)
+    result_label.grid(row=6, column=0, columnspan=2)
 
     window.mainloop()

@@ -46,10 +46,36 @@ def selection(population, method="elitist", tournament_size=5):
         raise ValueError(f"Unknown selection method: {method}")
 
 
-def crossover(parent1, parent2):
-    point = random.randint(1, CHROMOSOME_LENGTH - 1)
-    child1 = parent1[:point] + parent2[point:]
-    child2 = parent2[:point] + parent1[point:]
+def crossover(parent1, parent2, method="one_point"):
+    if method == "one_point":
+        point = random.randint(1, CHROMOSOME_LENGTH - 1)
+        child1 = parent1[:point] + parent2[point:]
+        child2 = parent2[:point] + parent1[point:]
+
+    elif method == "two_point":
+        point1 = random.randint(1, CHROMOSOME_LENGTH - 2)
+        point2 = random.randint(point1 + 1, CHROMOSOME_LENGTH - 1)
+        child1 = (parent1[:point1] + parent2[point1:point2] + parent1[point2:])
+        child2 = (parent2[:point1] + parent1[point1:point2] + parent2[point2:])
+
+    elif method == "uniform":
+        child1 = ""
+        child2 = ""
+        for i in range(CHROMOSOME_LENGTH):
+            if random.random() < 0.5:
+                child1 += parent1[i]
+                child2 += parent2[i]
+            else:
+                child1 += parent2[i]
+                child2 += parent1[i]
+
+    elif method == "none":
+        child1 = parent1
+        child2 = parent2
+
+    else:
+        raise ValueError(f"Unknown crossover method: {method}")
+
     return child1, child2
 
 def mutate(chrom, mutation_rate=0.01):
@@ -60,7 +86,7 @@ def mutate(chrom, mutation_rate=0.01):
     return ''.join(chrom_list)
 
 
-def run_algorithm(pop_size, generations, variables=None, selection_method="elitist"):
+def run_algorithm(pop_size, generations, variables=None, selection_method="elitist", crossover_method="one_point"):
     population = [generate_chromosome() for _ in range(pop_size)]
     best_solution = None
     best_fitness = float('inf')
@@ -72,7 +98,7 @@ def run_algorithm(pop_size, generations, variables=None, selection_method="eliti
 
         while len(new_population) < pop_size:
             parent1, parent2 = random.sample(sorted_pop[:10], 2)
-            child1, child2 = crossover(parent1, parent2)
+            child1, child2 = crossover(parent1, parent2, method=crossover_method)
             child1 = mutate(child1)
             child2 = mutate(child2)
             new_population.extend([child1, child2])
