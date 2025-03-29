@@ -23,9 +23,28 @@ def calculate_fitness(chrom):
     x, y = decode_chromosome(chrom)
     return himmelblau([x, y])
 
-def selection(population):
-    # sortuj od najlepszego (najmniejsza wartość fitness)
-    return sorted(population, key=lambda c: calculate_fitness(c))
+def selection(population, method="elitist", tournament_size=5):
+    if method == "elitist":
+        return sorted(population, key=lambda c: calculate_fitness(c))
+
+    elif method == "roulette":
+        fitnesses = [1 / (calculate_fitness(c) + 1e-6) for c in population]
+        total = sum(fitnesses)
+        probs = [f / total for f in fitnesses]
+        selected = random.choices(population, weights=probs, k=len(population))
+        return selected
+
+    elif method == "tournament":
+        selected = []
+        for _ in range(len(population)):
+            contenders = random.sample(population, tournament_size)
+            winner = min(contenders, key=lambda c: calculate_fitness(c))
+            selected.append(winner)
+        return selected
+
+    else:
+        raise ValueError(f"Unknown selection method: {method}")
+
 
 def crossover(parent1, parent2):
     point = random.randint(1, CHROMOSOME_LENGTH - 1)
@@ -41,14 +60,14 @@ def mutate(chrom, mutation_rate=0.01):
     return ''.join(chrom_list)
 
 
-def run_algorithm(pop_size, generations, variables=None):
+def run_algorithm(pop_size, generations, variables=None, selection_method="elitist"):
     population = [generate_chromosome() for _ in range(pop_size)]
     best_solution = None
     best_fitness = float('inf')
     progress = []
 
     for _ in range(generations):
-        sorted_pop = selection(population)
+        sorted_pop = selection(population, method=selection_method)  # tymczasowo, później z GUI
         new_population = sorted_pop[:2]  # elitarna strategia
 
         while len(new_population) < pop_size:

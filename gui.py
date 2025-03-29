@@ -1,14 +1,15 @@
 import tkinter as tk
 from tkinter import ttk
-from ga import run_algorithm  # będziemy dopiero pisać
+from ga import run_algorithm
 
 def start_algorithm():
     try:
         population = int(pop_entry.get())
         generations = int(gen_entry.get())
         variables = int(var_entry.get())
+        method = selection_method.get()  # ⬅ pobieramy wybraną metodę
 
-        result = run_algorithm(population, generations, variables)
+        result = run_algorithm(population, generations, variables, method)
         result_label.config(text=f"Najlepszy wynik: {result}")
     except Exception as e:
         result_label.config(text=f"Błąd: {e}")
@@ -35,11 +36,17 @@ def create_gui():
     var_entry.grid(row=2, column=1)
     var_entry.insert(0, "2")
 
+    ttk.Label(window, text="Metoda selekcji:").grid(row=3, column=0, sticky="w")
+    global selection_method
+    selection_method = ttk.Combobox(window, values=["elitist", "roulette", "tournament"])
+    selection_method.grid(row=3, column=1)
+    selection_method.current(0)  # domyślnie "elitist"
+
     start_btn = ttk.Button(window, text="Start", command=start_algorithm)
-    start_btn.grid(row=3, column=0, columnspan=2, pady=10)
+    start_btn.grid(row=4, column=0, columnspan=2, pady=10)
 
     global result_label
     result_label = ttk.Label(window, text="")
-    result_label.grid(row=4, column=0, columnspan=2)
+    result_label.grid(row=5, column=0, columnspan=2)
 
     window.mainloop()
