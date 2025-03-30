@@ -1,73 +1,56 @@
 import tkinter as tk
 from tkinter import ttk
-from ga import run_algorithm
+from ga import GeneticAlgorithm
 
-def start_algorithm():
-    try:
-        population = int(pop_entry.get())
-        generations = int(gen_entry.get())
-        variables = int(var_entry.get())
-        method = selection_method.get()
-        cross_method = crossover_method.get()
-        mutation = mutation_method.get()
-        use_inversion_flag = inversion_var.get()  # ← nowa linijka
+class AppGUI:
+    def __init__(self):
+        self.window = tk.Tk()
+        self.window.title("Algorytm Genetyczny")
+        self._add_widgets()
+        self.window.mainloop()
 
-        result = run_algorithm(population, generations, variables, method, cross_method, mutation, use_inversion_flag)
-        result_label.config(text=f"Najlepszy wynik: {result}")
-    except Exception as e:
-        result_label.config(text=f"Błąd: {e}")
+    def _add_widgets(self):
+        labels = ["Liczba osobników:", "Liczba epok:", "Liczba zmiennych:"]
+        defaults = ["20", "50", "2"]
+        self.entries = []
 
-def create_gui():
-    window = tk.Tk()
-    window.title("Algorytm Genetyczny")
+        for i, (label, default) in enumerate(zip(labels, defaults)):
+            ttk.Label(self.window, text=label).grid(row=i, column=0, sticky="w")
+            entry = ttk.Entry(self.window)
+            entry.grid(row=i, column=1)
+            entry.insert(0, default)
+            self.entries.append(entry)
 
-    ttk.Label(window, text="Liczba osobników:").grid(row=0, column=0, sticky="w")
-    global pop_entry
-    pop_entry = ttk.Entry(window)
-    pop_entry.grid(row=0, column=1)
-    pop_entry.insert(0, "20")
+        self.selection_method = self._add_combobox("Metoda selekcji:", ["elitist", "roulette", "tournament"], 3)
+        self.crossover_method = self._add_combobox("Metoda krzyżowania:", ["one_point", "two_point", "uniform", "none"], 4)
+        self.mutation_method = self._add_combobox("Metoda mutacji:", ["one_point", "two_point", "boundary", "none"], 5)
 
-    ttk.Label(window, text="Liczba epok:").grid(row=1, column=0, sticky="w")
-    global gen_entry
-    gen_entry = ttk.Entry(window)
-    gen_entry.grid(row=1, column=1)
-    gen_entry.insert(0, "50")
+        self.inversion_var = tk.BooleanVar()
+        ttk.Checkbutton(self.window, text="Użyj operatora inwersji", variable=self.inversion_var).grid(row=6, column=0, columnspan=2, sticky="w")
 
-    ttk.Label(window, text="Liczba zmiennych:").grid(row=2, column=0, sticky="w")
-    global var_entry
-    var_entry = ttk.Entry(window)
-    var_entry.grid(row=2, column=1)
-    var_entry.insert(0, "2")
+        ttk.Button(self.window, text="Start", command=self.run_algorithm).grid(row=7, column=0, columnspan=2, pady=10)
 
-    ttk.Label(window, text="Metoda selekcji:").grid(row=3, column=0, sticky="w")
-    global selection_method
-    selection_method = ttk.Combobox(window, values=["elitist", "roulette", "tournament"])
-    selection_method.grid(row=3, column=1)
-    selection_method.current(0)
+        self.result_label = ttk.Label(self.window, text="")
+        self.result_label.grid(row=8, column=0, columnspan=2)
 
-    ttk.Label(window, text="Metoda krzyżowania:").grid(row=4, column=0, sticky="w")
-    global crossover_method
-    crossover_method = ttk.Combobox(window, values=["one_point", "two_point", "uniform", "none"])
-    crossover_method.grid(row=4, column=1)
-    crossover_method.current(0)
+    def _add_combobox(self, text, options, row):
+        ttk.Label(self.window, text=text).grid(row=row, column=0, sticky="w")
+        box = ttk.Combobox(self.window, values=options)
+        box.grid(row=row, column=1)
+        box.current(0)
+        return box
 
-    ttk.Label(window, text="Metoda mutacji:").grid(row=5, column=0, sticky="w")
-    global mutation_method
-    mutation_method = ttk.Combobox(window, values=["one_point", "two_point", "boundary", "none"])
-    mutation_method.grid(row=5, column=1)
-    mutation_method.current(0)
+    def run_algorithm(self):
+        try:
+            pop_size = int(self.entries[0].get())
+            generations = int(self.entries[1].get())
+            selection = self.selection_method.get()
+            crossover = self.crossover_method.get()
+            mutation = self.mutation_method.get()
+            inversion = self.inversion_var.get()
 
-    # Checkbox: Użyj inwersji
-    global inversion_var
-    inversion_var = tk.BooleanVar()
-    inversion_check = ttk.Checkbutton(window, text="Użyj operatora inwersji", variable=inversion_var)
-    inversion_check.grid(row=6, column=0, columnspan=2, sticky="w")
-
-    start_btn = ttk.Button(window, text="Start", command=start_algorithm)
-    start_btn.grid(row=7, column=0, columnspan=2, pady=10)
-
-    global result_label
-    result_label = ttk.Label(window, text="")
-    result_label.grid(row=8, column=0, columnspan=2)
-
-    window.mainloop()
+            ga = GeneticAlgorithm(pop_size, generations, selection, crossover, mutation, inversion)
+            result = ga.run()
+            self.result_label.config(text=f"Najlepszy wynik: {result}")
+        except Exception as e:
+            self.result_label.config(text=f"Błąd: {e}")
