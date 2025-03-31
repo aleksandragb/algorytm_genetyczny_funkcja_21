@@ -10,9 +10,10 @@ def start_algorithm():
         method = selection_method.get()
         cross_method = crossover_method.get()
         mutation = mutation_method.get()
-        use_inversion_flag = inversion_var.get()  # ← nowa linijka
+        use_inversion_flag = inversion_var.get() 
+        elitism = elitism_enabled.get()
 
-        result = run_algorithm(population, generations, variables, method, cross_method, mutation, use_inversion_flag)
+        result = run_algorithm(population, generations, variables, method, cross_method, mutation, use_inversion_flag, elitism)
         result_label.config(text=f"Najlepszy wynik: {result}")
     except Exception as e:
         result_label.config(text=f"Błąd: {e}")
@@ -38,6 +39,8 @@ def create_gui():
     var_entry = ttk.Entry(window)
     var_entry.grid(row=2, column=1)
     var_entry.insert(0, "2")
+    # var_entry.config(state="disabled")
+
 
     ttk.Label(window, text="Metoda selekcji:").grid(row=3, column=0, sticky="w")
     global selection_method
@@ -47,7 +50,7 @@ def create_gui():
 
     ttk.Label(window, text="Metoda krzyżowania:").grid(row=4, column=0, sticky="w")
     global crossover_method
-    crossover_method = ttk.Combobox(window, values=["one_point", "two_point", "uniform", "none"])
+    crossover_method = ttk.Combobox(window, values=["one_point", "two_point", "uniform", "granular", "none"])
     crossover_method.grid(row=4, column=1)
     crossover_method.current(0)
 
@@ -63,11 +66,22 @@ def create_gui():
     inversion_check = ttk.Checkbutton(window, text="Użyj operatora inwersji", variable=inversion_var)
     inversion_check.grid(row=6, column=0, columnspan=2, sticky="w")
 
+
+    global elitism_enabled
+    elitism_enabled = tk.BooleanVar()
+    elitism_enabled.set(True)  # domyślnie włączone
+
+    elitism_checkbox = ttk.Checkbutton(
+        window, text="Użyj strategii elitarnej", variable=elitism_enabled
+    )
+    elitism_checkbox.grid(row=7, column=0, columnspan=2, sticky="w")
+
+
     start_btn = ttk.Button(window, text="Start", command=start_algorithm)
-    start_btn.grid(row=7, column=0, columnspan=2, pady=10)
+    start_btn.grid(row=8, column=0, columnspan=2, pady=10)
 
     global result_label
     result_label = ttk.Label(window, text="")
-    result_label.grid(row=8, column=0, columnspan=2)
+    result_label.grid(row=9, column=0, columnspan=2)
 
     window.mainloop()
