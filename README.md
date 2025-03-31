@@ -47,7 +47,8 @@ Poszukujemy rozwiązania zadanej funkcji. Ograniczamy się do pewnego zakresu. S
        ![image](https://github.com/user-attachments/assets/324730ee-08df-4bd7-a172-f30f67a96b5b)
 
      - dwupunktowa
-       ![image](https://github.com/user-attachments/assets/a60a190c-286f-4510-bb00-7946f99167e3)
+       ![image](https://github.com/user-attachments/assets/cc0cf522-bdf9-49b9-87fc-7ebc1a078a5b)
+
 
 6. Inwersja - forma muacji pojedyńczego osobnika nie pary osobników, losowanie dwóch punktów i zamiana bitów między nimi, prawdopodobieństwo inwersji 10%, 20%
    ![image](https://github.com/user-attachments/assets/dacf684a-a3dc-4338-a9a3-6c759989ab2b)
