@@ -3,6 +3,7 @@ from functions import himmelblau
 from utils import binary_to_real
 from plot import plot_progress
 from utils import save_results_to_csv
+import time
 
 BITS_PER_VAR = 16
 CHROMOSOME_LENGTH = BITS_PER_VAR * 2  # x + y
@@ -56,7 +57,7 @@ def selection(population, method="elitist", tournament_size=5, min_val=-5, max_v
 # granular - mieszamy losowo małe grupki bitów (u nas np. po 4 bity na raz)
 # none - kopiowanie rodziców bez zmian
 # Cel to tworzenie nowych rozwiązań będących połączeniem starych - czasem lepsze (tworzenie dzieci z 2 rodziców)
-def crossover(parent1, parent2, method="one_point"):
+def crossover(parent1, parent2, method="one_point", uniform_prob=0.5):
     if method == "one_point":
         point = random.randint(1, CHROMOSOME_LENGTH - 1)
         child1 = parent1[:point] + parent2[point:]
@@ -72,7 +73,7 @@ def crossover(parent1, parent2, method="one_point"):
         child1 = ""
         child2 = ""
         for i in range(CHROMOSOME_LENGTH):
-            if random.random() < 0.5:
+            if random.random() < uniform_prob:
                 child1 += parent1[i]
                 child2 += parent2[i]
             else:
@@ -84,12 +85,12 @@ def crossover(parent1, parent2, method="one_point"):
         child1 = ""
         child2 = ""
         for i in range(0, CHROMOSOME_LENGTH, grain_size):
-            if random.random() < 0.5:
-                child1 += parent1[i:i+grain_size]
-                child2 += parent2[i:i+grain_size]
+            if random.random() < uniform_prob:
+                child1 += parent1[i:i + grain_size]
+                child2 += parent2[i:i + grain_size]
             else:
-                child1 += parent2[i:i+grain_size]
-                child2 += parent1[i:i+grain_size]
+                child1 += parent2[i:i + grain_size]
+                child2 += parent1[i:i + grain_size]
 
 
     elif method == "none":
@@ -147,7 +148,8 @@ def inversion(chrom):
     return ''.join(chrom_list)
 
 
-def run_algorithm(pop_size, generations, variables=None, selection_method="elitist", crossover_method="one_point", mutation_method="one_point", use_inversion=False, use_elitism=True, min_val=-5, max_val=5 ):
+def run_algorithm(pop_size, generations, variables=None, selection_method="elitist", crossover_method="one_point", mutation_method="one_point", use_inversion=False, use_elitism=True, min_val=-5, max_val=5, uniform_prob=0.5):
+    start_time = time.time() 
     population = [generate_chromosome() for _ in range(pop_size)]
     best_solution = None
     best_fitness = float('inf')
@@ -166,7 +168,7 @@ def run_algorithm(pop_size, generations, variables=None, selection_method="eliti
 
         while len(new_population) < pop_size:
             parent1, parent2 = random.sample(sorted_pop[:10], 2)
-            child1, child2 = crossover(parent1, parent2, method=crossover_method)
+            child1, child2 = crossover(parent1, parent2, method=crossover_method, uniform_prob=uniform_prob)
             child1 = mutate(child1, method=mutation_method)
             child2 = mutate(child2, method=mutation_method)
 
@@ -186,10 +188,10 @@ def run_algorithm(pop_size, generations, variables=None, selection_method="eliti
             best_fitness = current_fitness
             best_solution = current_best
 
-    x, y = decode_chromosome(best_solution)
-
+    x, y = decode_chromosome(best_solution, min_val, max_val)
+    elapsed_time = time.time() - start_time
     plot_progress(progress)
     save_results_to_csv(progress)
 
-    return f"x = {x:.4f}, y = {y:.4f}, f(x,y) = {best_fitness:.4f}"
+    return f"x = {x:.4f}, y = {y:.4f}, f(x,y) = {best_fitness:.4f}, czas: {elapsed_time:.6f} s"
 

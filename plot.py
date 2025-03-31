@@ -8,4 +8,5 @@ def plot_progress(best_scores):
     plt.ylabel("Best Fitness")
     plt.grid(True)
     plt.tight_layout()
-    plt.show()
+    plt.show(block=False)
+
