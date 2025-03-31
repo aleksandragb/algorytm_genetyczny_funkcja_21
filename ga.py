@@ -4,35 +4,34 @@ from utils import binary_to_real
 from plot import plot_progress
 from utils import save_results_to_csv
 
-MIN_VAL = -5
-MAX_VAL = 5
 BITS_PER_VAR = 16
 CHROMOSOME_LENGTH = BITS_PER_VAR * 2  # x + y
 
 def generate_chromosome():
     return ''.join(random.choice('01') for _ in range(CHROMOSOME_LENGTH))
 
-def decode_chromosome(chrom):
+def decode_chromosome(chrom, min_val, max_val):
     x_bin = chrom[:BITS_PER_VAR]
     y_bin = chrom[BITS_PER_VAR:]
-    x = binary_to_real(x_bin, MIN_VAL, MAX_VAL, BITS_PER_VAR)
-    y = binary_to_real(y_bin, MIN_VAL, MAX_VAL, BITS_PER_VAR)
+    x = binary_to_real(x_bin, min_val, max_val, BITS_PER_VAR)
+    y = binary_to_real(y_bin, min_val, max_val, BITS_PER_VAR)
     return [x, y]
 
-def calculate_fitness(chrom):
-    x, y = decode_chromosome(chrom)
+
+def calculate_fitness(chrom, min_val, max_val):
+    x, y = decode_chromosome(chrom, min_val, max_val)
     return himmelblau([x, y])
 
 #selekcja - wybieranie najlepszych do rozmnażania (które osobniki będą rodzicami):
 # elitist: sortujesz i wybierasz najlepszych 
 # roulette: losujesz z szansą zależną od fitness (czyli mierzenie jak dobre jest rozwiązanie - wynik funkcji dla danego x i y, żeby wiedzieć które chromosomy są "lepsze", u nas im mniejszy wynik tym lepszy bo szukamy minimum funkcji)
 # tournament: kilka osobników walczy, wygrywa najlepszy - losowanie grupek i wybieranie z każdej najlepszego osobnika
-def selection(population, method="elitist", tournament_size=5):
+def selection(population, method="elitist", tournament_size=5, min_val=-5, max_val=5):
     if method == "elitist":
-        return sorted(population, key=lambda c: calculate_fitness(c))
+        return sorted(population, key=lambda c: calculate_fitness(c, min_val, max_val))
 
     elif method == "roulette":
-        fitnesses = [1 / (calculate_fitness(c) + 1e-6) for c in population]
+        fitnesses = [1 / (calculate_fitness(c, min_val, max_val) + 1e-6) for c in population]
         total = sum(fitnesses)
         probs = [f / total for f in fitnesses]
         selected = random.choices(population, weights=probs, k=len(population))
@@ -42,7 +41,7 @@ def selection(population, method="elitist", tournament_size=5):
         selected = []
         for _ in range(len(population)):
             contenders = random.sample(population, tournament_size)
-            winner = min(contenders, key=lambda c: calculate_fitness(c))
+            winner = min(contenders, key=lambda c: calculate_fitness(c, min_val, max_val))
             selected.append(winner)
         return selected
 
@@ -148,7 +147,7 @@ def inversion(chrom):
     return ''.join(chrom_list)
 
 
-def run_algorithm(pop_size, generations, variables=None, selection_method="elitist", crossover_method="one_point", mutation_method="one_point", use_inversion=False, use_elitism=True ):
+def run_algorithm(pop_size, generations, variables=None, selection_method="elitist", crossover_method="one_point", mutation_method="one_point", use_inversion=False, use_elitism=True, min_val=-5, max_val=5 ):
     population = [generate_chromosome() for _ in range(pop_size)]
     best_solution = None
     best_fitness = float('inf')
@@ -156,7 +155,7 @@ def run_algorithm(pop_size, generations, variables=None, selection_method="eliti
 
     for _ in range(generations):
         # selekcja: wybieramy osobniki, które będą rodzicami, sortujemy całą populację od najlepszego do najgorszego
-        sorted_pop = selection(population, method=selection_method)
+        sorted_pop = selection(population, method=selection_method, min_val=min_val, max_val=max_val)
         # strategia elitarna: zabieramy najlepszych 2 osobników z poprzedniego pokolenia i przenosimy ich bez zmian, czyli ci byli najlepsi - niech żyją dalej, nie ryzykujemy ich mutacją
         # new_population = sorted_pop[:2]  # elitarna strategia Zabieramy 2 najlepsze osobniki i wkładamy je do nowej populacji bez zmian. To zapewnia, że najlepsze rozwiązania nie zginą w losowości.
         if use_elitism:
@@ -179,8 +178,8 @@ def run_algorithm(pop_size, generations, variables=None, selection_method="eliti
 
         population = new_population[:pop_size]
 
-        current_best = selection(population)[0]
-        current_fitness = calculate_fitness(current_best)
+        current_best = selection(population, method=selection_method, min_val=min_val, max_val=max_val)[0]
+        current_fitness = calculate_fitness(current_best, min_val, max_val)
         progress.append(current_fitness)
 
         if current_fitness < best_fitness:

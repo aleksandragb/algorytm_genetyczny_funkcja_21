@@ -12,8 +12,11 @@ def start_algorithm():
         mutation = mutation_method.get()
         use_inversion_flag = inversion_var.get() 
         elitism = elitism_enabled.get()
+        min_val = float(min_val_entry.get())
+        max_val = float(max_val_entry.get())
 
-        result = run_algorithm(population, generations, variables, method, cross_method, mutation, use_inversion_flag, elitism)
+
+        result = run_algorithm(population, generations, variables, method, cross_method, mutation, use_inversion_flag, elitism, min_val=min_val, max_val=max_val)
         result_label.config(text=f"Najlepszy wynik: {result}")
     except Exception as e:
         result_label.config(text=f"Błąd: {e}")
@@ -41,30 +44,42 @@ def create_gui():
     var_entry.insert(0, "2")
     # var_entry.config(state="disabled")
 
+    ttk.Label(window, text="Początek zakresu:").grid(row=3, column=0, sticky="w")
+    global min_val_entry
+    min_val_entry = ttk.Entry(window)
+    min_val_entry.grid(row=3, column=1)
+    min_val_entry.insert(0, "-5")
 
-    ttk.Label(window, text="Metoda selekcji:").grid(row=3, column=0, sticky="w")
+    ttk.Label(window, text="Koniec zakresu:").grid(row=4, column=0, sticky="w")
+    global max_val_entry
+    max_val_entry = ttk.Entry(window)
+    max_val_entry.grid(row=4, column=1)
+    max_val_entry.insert(0, "5")
+
+
+    ttk.Label(window, text="Metoda selekcji:").grid(row=5, column=0, sticky="w")
     global selection_method
-    selection_method = ttk.Combobox(window, values=["elitist", "roulette", "tournament"])
-    selection_method.grid(row=3, column=1)
+    selection_method = ttk.Combobox(window, values=["najlepszych osobników", "ruletki", "turniejowa"])
+    selection_method.grid(row=5, column=1)
     selection_method.current(0)
 
-    ttk.Label(window, text="Metoda krzyżowania:").grid(row=4, column=0, sticky="w")
+    ttk.Label(window, text="Metoda krzyżowania:").grid(row=6, column=0, sticky="w")
     global crossover_method
-    crossover_method = ttk.Combobox(window, values=["one_point", "two_point", "uniform", "granular", "none"])
-    crossover_method.grid(row=4, column=1)
+    crossover_method = ttk.Combobox(window, values=["jednopunktowe", "dwupunktowe", "jednorodne", "ziarniste", "żadne"])
+    crossover_method.grid(row=6, column=1)
     crossover_method.current(0)
 
-    ttk.Label(window, text="Metoda mutacji:").grid(row=5, column=0, sticky="w")
+    ttk.Label(window, text="Metoda mutacji:").grid(row=7, column=0, sticky="w")
     global mutation_method
-    mutation_method = ttk.Combobox(window, values=["one_point", "two_point", "boundary", "none"])
-    mutation_method.grid(row=5, column=1)
+    mutation_method = ttk.Combobox(window, values=["jednopunktowe", "dwupunktowe", "brzegowe", "żadne"])
+    mutation_method.grid(row=7, column=1)
     mutation_method.current(0)
 
     # Checkbox: Użyj inwersji
     global inversion_var
     inversion_var = tk.BooleanVar()
     inversion_check = ttk.Checkbutton(window, text="Użyj operatora inwersji", variable=inversion_var)
-    inversion_check.grid(row=6, column=0, columnspan=2, sticky="w")
+    inversion_check.grid(row=8, column=0, columnspan=2, sticky="w")
 
 
     global elitism_enabled
@@ -74,14 +89,14 @@ def create_gui():
     elitism_checkbox = ttk.Checkbutton(
         window, text="Użyj strategii elitarnej", variable=elitism_enabled
     )
-    elitism_checkbox.grid(row=7, column=0, columnspan=2, sticky="w")
+    elitism_checkbox.grid(row=9, column=0, columnspan=2, sticky="w")
 
 
     start_btn = ttk.Button(window, text="Start", command=start_algorithm)
-    start_btn.grid(row=8, column=0, columnspan=2, pady=10)
+    start_btn.grid(row=10, column=0, columnspan=2, pady=10)
 
     global result_label
     result_label = ttk.Label(window, text="")
-    result_label.grid(row=9, column=0, columnspan=2)
+    result_label.grid(row=11, column=0, columnspan=2)
 
     window.mainloop()
