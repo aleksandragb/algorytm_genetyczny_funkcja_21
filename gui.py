@@ -52,7 +52,7 @@ def start_algorithm():
                                           use_inversion_flag, elitism, min_val=min_val, max_val=max_val,
                                           uniform_prob=uniform_prob)
         else:
-            result, best_fitness, progress = run_real_algorithm(population, generations, variables,
+            result = run_real_algorithm(population, generations, variables,
                                                                 selection_method=method,
                                                                 crossover_method=cross_method,
                                                                 mutation_method=mutation,
@@ -60,7 +60,6 @@ def start_algorithm():
                                                                 min_val=min_val,
                                                                 max_val=max_val,
                                                                 alpha=alpha)
-            result = f"Najlepsze rozwiązanie: {result}, Fitness: {best_fitness}"
 
         result_label.config(text=f"Wynik: {result}")
     except Exception as e:

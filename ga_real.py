@@ -1,6 +1,5 @@
 import random
 from functions import himmelblau
-from utils import binary_to_real
 from plot import plot_progress
 from utils import save_results_to_csv
 import time
@@ -120,6 +119,7 @@ def inversion(chrom):
 
 
 def run_algorithm(pop_size, generations, variables=2, selection_method="elitist", crossover_method="one_point", mutation_method="one_point", use_elitism=True, min_val=-5, max_val=5, objective_function=himmelblau, alpha = 0.5):
+    start_time = time.time() 
     if objective_function is None:
         raise ValueError("Objective function must be provided.")
 
@@ -152,10 +152,15 @@ def run_algorithm(pop_size, generations, variables=2, selection_method="elitist"
         if current_fitness < best_fitness:
             best_fitness = current_fitness
             best_solution = current_best
-    
+                
+    x, y = best_solution[:2]
+    elapsed_time = time.time() - start_time
     plot_progress(progress)
     save_results_to_csv(progress)
 
-    return best_solution, best_fitness, progress
+
+    return f"x = {x:.4f}, y = {y:.4f}, f(x,y) = {best_fitness:.4f}, czas: {elapsed_time:.6f} s"
+
+
 
 
