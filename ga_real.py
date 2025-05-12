@@ -53,7 +53,7 @@ def crossover(parent1, parent2, method="one_point", alpha=0.5):
             child2 = [(1 - alpha) * p1 + alpha * p2 for p1, p2 in zip(parent1, parent2)]
     
     elif method == "alpha_beta":
-        beta = 1 - alpha  # lub dowolna inna wartość z GUI, jeżeli dodasz wejście dla beta
+        beta = 1 - alpha
         child1 = [alpha * p1 + beta * p2 for p1, p2 in zip(parent1, parent2)]
         child2 = [beta * p1 + alpha * p2 for p1, p2 in zip(parent1, parent2)]
 
