@@ -1,0 +1,6 @@
+pygad
+numpy
+logging
+matplotlib
+benchmark_functions
+scipy

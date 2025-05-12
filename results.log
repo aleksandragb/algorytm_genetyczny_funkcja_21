@@ -1,0 +1,216 @@
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: single_point, Mutacja: random, Fitness: 0.9833003068870214
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: single_point, Mutacja: swap, Fitness: 0.9996737882772391
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: single_point, Mutacja: gauss, Fitness: 0.995690928481939
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: two_points, Mutacja: random, Fitness: 0.9967228519829016
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: two_points, Mutacja: swap, Fitness: 1.0
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: two_points, Mutacja: gauss, Fitness: 0.999995239028906
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: uniform, Mutacja: random, Fitness: 0.9978510477765784
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: uniform, Mutacja: swap, Fitness: 0.9998952575842638
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: uniform, Mutacja: gauss, Fitness: 0.9911154659226862
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: <function custom_crossover at 0x0000024A31CF05E0>, Mutacja: random, Fitness: 0.9991931468006131
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: <function custom_crossover at 0x0000024A31CF05E0>, Mutacja: swap, Fitness: 0.9983911455492136
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: <function custom_crossover at 0x0000024A31CF05E0>, Mutacja: gauss, Fitness: 0.9999128735027163
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: single_point, Mutacja: random, Fitness: 0.9148219984717856
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: single_point, Mutacja: swap, Fitness: 0.998413919266367
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: single_point, Mutacja: gauss, Fitness: 0.9956624870662717
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: two_points, Mutacja: random, Fitness: 0.9987120554861935
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: two_points, Mutacja: swap, Fitness: 0.999101784169701
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: two_points, Mutacja: gauss, Fitness: 0.9959736619122131
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: uniform, Mutacja: random, Fitness: 0.9808454006963414
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: uniform, Mutacja: swap, Fitness: 0.9993096051101965
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: uniform, Mutacja: gauss, Fitness: 0.9981698769060339
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: <function custom_crossover at 0x0000024A31CF05E0>, Mutacja: random, Fitness: 0.9985450680570539
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: <function custom_crossover at 0x0000024A31CF05E0>, Mutacja: swap, Fitness: 0.9934757899086165
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: <function custom_crossover at 0x0000024A31CF05E0>, Mutacja: gauss, Fitness: 0.9996904964332587
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: single_point, Mutacja: random, Fitness: 0.9886389649421501
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: single_point, Mutacja: swap, Fitness: 0.9814897635875404
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: single_point, Mutacja: gauss, Fitness: 0.989687601167074
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: two_points, Mutacja: random, Fitness: 0.9312673605771589
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: two_points, Mutacja: swap, Fitness: 0.9990727940996901
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: two_points, Mutacja: gauss, Fitness: 0.9999934276997864
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: uniform, Mutacja: random, Fitness: 0.9482241206083503
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: uniform, Mutacja: swap, Fitness: 0.999354448001746
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: uniform, Mutacja: gauss, Fitness: 0.9661640862645146
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: <function custom_crossover at 0x0000024A31CF05E0>, Mutacja: random, Fitness: 0.9778737471329394
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: <function custom_crossover at 0x0000024A31CF05E0>, Mutacja: swap, Fitness: 0.9999692073784655
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: <function custom_crossover at 0x0000024A31CF05E0>, Mutacja: gauss, Fitness: 0.9998027301011384
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: single_point, Mutacja: random, Fitness: 0.9824243539281404
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: single_point, Mutacja: swap, Fitness: 0.9648664201953016
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: single_point, Mutacja: gauss, Fitness: 0.9999615145184192
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: two_points, Mutacja: random, Fitness: 0.9902182283068213
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: two_points, Mutacja: swap, Fitness: 0.9675391041372886
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: two_points, Mutacja: gauss, Fitness: 0.9999988952151826
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: uniform, Mutacja: random, Fitness: 0.9178123217840853
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: uniform, Mutacja: swap, Fitness: 0.997623192665468
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: uniform, Mutacja: gauss, Fitness: 0.9999910370429141
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: <function custom_crossover at 0x0000024A31CF05E0>, Mutacja: random, Fitness: 0.9835878932294697
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: <function custom_crossover at 0x0000024A31CF05E0>, Mutacja: swap, Fitness: 0.9859189569870362
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: <function custom_crossover at 0x0000024A31CF05E0>, Mutacja: gauss, Fitness: 0.9999902953861286
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: single_point, Mutacja: random, Fitness: 0.9868297923161402
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: single_point, Mutacja: swap, Fitness: 0.9940117694586996
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: single_point, Mutacja: gauss, Fitness: 0.9998291602054229
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: two_points, Mutacja: random, Fitness: 0.9775722653345342
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: two_points, Mutacja: swap, Fitness: 0.9974828049986803
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: two_points, Mutacja: gauss, Fitness: 0.9997893747308256
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: uniform, Mutacja: random, Fitness: 0.977619508542464
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: uniform, Mutacja: swap, Fitness: 0.905482523650909
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: uniform, Mutacja: gauss, Fitness: 0.9997932289678735
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: <function custom_crossover at 0x0000024A31CF05E0>, Mutacja: random, Fitness: 0.9912270056341138
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: <function custom_crossover at 0x0000024A31CF05E0>, Mutacja: swap, Fitness: 0.9540634542359604
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: <function custom_crossover at 0x0000024A31CF05E0>, Mutacja: gauss, Fitness: 0.9999522583706466
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: single_point, Mutacja: random, Fitness: 0.9959308226222883
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: single_point, Mutacja: swap, Fitness: 0.9117155213678404
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: single_point, Mutacja: gauss, Fitness: 0.998133549666173
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: two_points, Mutacja: random, Fitness: 0.8809565306037445
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: two_points, Mutacja: swap, Fitness: 0.947820076415081
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: two_points, Mutacja: gauss, Fitness: 0.9993225996553171
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: uniform, Mutacja: random, Fitness: 0.9731885376726583
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: uniform, Mutacja: swap, Fitness: 0.9474500911391595
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: uniform, Mutacja: gauss, Fitness: 0.999727601762429
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: <function custom_crossover at 0x0000024A31CF05E0>, Mutacja: random, Fitness: 0.8964965621629005
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: <function custom_crossover at 0x0000024A31CF05E0>, Mutacja: swap, Fitness: 0.33471361581216996
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: <function custom_crossover at 0x0000024A31CF05E0>, Mutacja: gauss, Fitness: 0.9996822393011757
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: single_point, Mutacja: random, Fitness: 0.9278969882680629
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: single_point, Mutacja: swap, Fitness: 0.9998942041601109
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: single_point, Mutacja: gauss, Fitness: 0.9871034264449908
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: two_points, Mutacja: random, Fitness: 0.9997997009422105
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: two_points, Mutacja: swap, Fitness: 0.9998129589738625
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: two_points, Mutacja: gauss, Fitness: 1.0
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: uniform, Mutacja: random, Fitness: 0.9999819996194339
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: uniform, Mutacja: swap, Fitness: 0.9999872617649197
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: uniform, Mutacja: gauss, Fitness: 0.9998624214770232
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: <function custom_crossover at 0x000001FFE99E05E0>, Mutacja: random, Fitness: 0.9077316040178128
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: <function custom_crossover at 0x000001FFE99E05E0>, Mutacja: swap, Fitness: 0.9999018962181483
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: <function custom_crossover at 0x000001FFE99E05E0>, Mutacja: gauss, Fitness: 1.0
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: single_point, Mutacja: random, Fitness: 0.9986583431774972
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: single_point, Mutacja: swap, Fitness: 0.9845950012363868
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: single_point, Mutacja: gauss, Fitness: 0.9992354485721631
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: two_points, Mutacja: random, Fitness: 0.997794655354922
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: two_points, Mutacja: swap, Fitness: 0.9999756742714835
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: two_points, Mutacja: gauss, Fitness: 0.9989217219154939
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: uniform, Mutacja: random, Fitness: 0.9979079771494614
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: uniform, Mutacja: swap, Fitness: 0.9999317780582103
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: uniform, Mutacja: gauss, Fitness: 0.9878440975670486
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: <function custom_crossover at 0x000001FFE99E05E0>, Mutacja: random, Fitness: 0.9861725642902426
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: <function custom_crossover at 0x000001FFE99E05E0>, Mutacja: swap, Fitness: 0.9998274580892864
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: <function custom_crossover at 0x000001FFE99E05E0>, Mutacja: gauss, Fitness: 0.9999836838294085
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: single_point, Mutacja: random, Fitness: 0.9975048002408866
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: single_point, Mutacja: swap, Fitness: 0.9925526565752378
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: single_point, Mutacja: gauss, Fitness: 0.9973121536910153
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: two_points, Mutacja: random, Fitness: 0.8680741998613105
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: two_points, Mutacja: swap, Fitness: 0.941143575684457
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: two_points, Mutacja: gauss, Fitness: 0.9993121474165574
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: uniform, Mutacja: random, Fitness: 0.9922331905983517
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: uniform, Mutacja: swap, Fitness: 0.985554203059558
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: uniform, Mutacja: gauss, Fitness: 0.985597580797781
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: <function custom_crossover at 0x000001FFE99E05E0>, Mutacja: random, Fitness: 0.9747937767259421
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: <function custom_crossover at 0x000001FFE99E05E0>, Mutacja: swap, Fitness: 0.9355717346020486
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: <function custom_crossover at 0x000001FFE99E05E0>, Mutacja: gauss, Fitness: 0.999640636055724
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: single_point, Mutacja: random, Fitness: 0.9725326990674822
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: single_point, Mutacja: swap, Fitness: 0.9049522906996829
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: single_point, Mutacja: gauss, Fitness: 0.9999953330389515
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: two_points, Mutacja: random, Fitness: 0.9869473079916837
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: two_points, Mutacja: swap, Fitness: 0.8607580916316875
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: two_points, Mutacja: gauss, Fitness: 0.9999302817158433
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: uniform, Mutacja: random, Fitness: 0.9580164781181238
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: uniform, Mutacja: swap, Fitness: 0.9985571769957947
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: uniform, Mutacja: gauss, Fitness: 0.9999697911583184
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: <function custom_crossover at 0x000001FFE99E05E0>, Mutacja: random, Fitness: 0.9818173956638477
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: <function custom_crossover at 0x000001FFE99E05E0>, Mutacja: swap, Fitness: 0.8998463323064114
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: <function custom_crossover at 0x000001FFE99E05E0>, Mutacja: gauss, Fitness: 0.9999948286964698
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: single_point, Mutacja: random, Fitness: 0.8633013610923803
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: single_point, Mutacja: swap, Fitness: 0.9961343341732299
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: single_point, Mutacja: gauss, Fitness: 0.9997731467716761
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: two_points, Mutacja: random, Fitness: 0.9993596796344668
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: two_points, Mutacja: swap, Fitness: 0.8741218508265909
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: two_points, Mutacja: gauss, Fitness: 0.9998295444110714
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: uniform, Mutacja: random, Fitness: 0.9505945392101424
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: uniform, Mutacja: swap, Fitness: 0.9847128151305883
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: uniform, Mutacja: gauss, Fitness: 0.9998050767217329
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: <function custom_crossover at 0x000001FFE99E05E0>, Mutacja: random, Fitness: 0.9912948203589794
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: <function custom_crossover at 0x000001FFE99E05E0>, Mutacja: swap, Fitness: 0.8430457500572851
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: <function custom_crossover at 0x000001FFE99E05E0>, Mutacja: gauss, Fitness: 0.9998828298792705
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: single_point, Mutacja: random, Fitness: 0.921253907159132
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: single_point, Mutacja: swap, Fitness: 0.9855726062852089
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: single_point, Mutacja: gauss, Fitness: 0.9898331526564828
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: two_points, Mutacja: random, Fitness: 0.8602411991064494
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: two_points, Mutacja: swap, Fitness: 0.9984412309303895
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: two_points, Mutacja: gauss, Fitness: 0.9977705742413792
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: uniform, Mutacja: random, Fitness: 0.9653018847987249
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: uniform, Mutacja: swap, Fitness: 0.42327386279568907
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: uniform, Mutacja: gauss, Fitness: 0.999824900189892
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: <function custom_crossover at 0x000001FFE99E05E0>, Mutacja: random, Fitness: 0.9262189879363166
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: <function custom_crossover at 0x000001FFE99E05E0>, Mutacja: swap, Fitness: 0.5634561075693373
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: <function custom_crossover at 0x000001FFE99E05E0>, Mutacja: gauss, Fitness: 0.9980020174937184
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: single_point, Mutacja: random, Fitness: 0.9798325990367438
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: single_point, Mutacja: swap, Fitness: 0.9997294669274112
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: single_point, Mutacja: gauss, Fitness: 0.9791269292782205
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: two_points, Mutacja: random, Fitness: 0.9643908541078187
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: two_points, Mutacja: swap, Fitness: 0.9999890562937108
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: two_points, Mutacja: gauss, Fitness: 1.0
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: uniform, Mutacja: random, Fitness: 0.9814366794620148
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: uniform, Mutacja: swap, Fitness: 0.999180441171181
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: uniform, Mutacja: gauss, Fitness: 0.999965570699151
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: <function custom_crossover at 0x0000013786CE0670>, Mutacja: random, Fitness: 0.9553085086182801
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: <function custom_crossover at 0x0000013786CE0670>, Mutacja: swap, Fitness: 0.9999856816151995
+Reprezentacja: binary, Selekcja: tournament, Krzy¿owanie: <function custom_crossover at 0x0000013786CE0670>, Mutacja: gauss, Fitness: 1.0
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: single_point, Mutacja: random, Fitness: 0.9924694972198873
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: single_point, Mutacja: swap, Fitness: 0.9994688013832775
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: single_point, Mutacja: gauss, Fitness: 0.9999959945140658
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: two_points, Mutacja: random, Fitness: 0.9823665396462911
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: two_points, Mutacja: swap, Fitness: 0.9996729520595447
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: two_points, Mutacja: gauss, Fitness: 0.998188482826089
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: uniform, Mutacja: random, Fitness: 0.9878379730233151
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: uniform, Mutacja: swap, Fitness: 0.9997530097056407
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: uniform, Mutacja: gauss, Fitness: 0.9954658912680242
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: <function custom_crossover at 0x0000013786CE0670>, Mutacja: random, Fitness: 0.9939612854794332
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: <function custom_crossover at 0x0000013786CE0670>, Mutacja: swap, Fitness: 0.9980147512660714
+Reprezentacja: binary, Selekcja: rws, Krzy¿owanie: <function custom_crossover at 0x0000013786CE0670>, Mutacja: gauss, Fitness: 0.9994936777366534
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: single_point, Mutacja: random, Fitness: 0.9596188396002244
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: single_point, Mutacja: swap, Fitness: 0.9205656671557031
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: single_point, Mutacja: gauss, Fitness: 0.9843628010680903
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: two_points, Mutacja: random, Fitness: 0.9283403923893747
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: two_points, Mutacja: swap, Fitness: 0.988828417801826
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: two_points, Mutacja: gauss, Fitness: 0.9988034397018899
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: uniform, Mutacja: random, Fitness: 0.9349275281440372
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: uniform, Mutacja: swap, Fitness: 0.9349964847237405
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: uniform, Mutacja: gauss, Fitness: 0.9103482748325181
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: <function custom_crossover at 0x0000013786CE0670>, Mutacja: random, Fitness: 0.888222324303774
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: <function custom_crossover at 0x0000013786CE0670>, Mutacja: swap, Fitness: 0.9432234524008385
+Reprezentacja: binary, Selekcja: random, Krzy¿owanie: <function custom_crossover at 0x0000013786CE0670>, Mutacja: gauss, Fitness: 0.9982586579954753
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: single_point, Mutacja: random, Fitness: 0.9819035223941189
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: single_point, Mutacja: swap, Fitness: 0.9851090128036516
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: single_point, Mutacja: gauss, Fitness: 0.9999959853566388
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: two_points, Mutacja: random, Fitness: 0.996215713837036
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: two_points, Mutacja: swap, Fitness: 0.9930480181836953
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: two_points, Mutacja: gauss, Fitness: 0.9999818114179851
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: uniform, Mutacja: random, Fitness: 0.9608105464380927
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: uniform, Mutacja: swap, Fitness: 0.8688164969678548
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: uniform, Mutacja: gauss, Fitness: 0.9999857914693451
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: <function custom_crossover at 0x0000013786CE0670>, Mutacja: random, Fitness: 0.9686918769889126
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: <function custom_crossover at 0x0000013786CE0670>, Mutacja: swap, Fitness: 0.9949588127428592
+Reprezentacja: real, Selekcja: tournament, Krzy¿owanie: <function custom_crossover at 0x0000013786CE0670>, Mutacja: gauss, Fitness: 0.9997414333522039
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: single_point, Mutacja: random, Fitness: 0.9971740241784238
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: single_point, Mutacja: swap, Fitness: 0.9821519772244561
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: single_point, Mutacja: gauss, Fitness: 0.9995685314167426
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: two_points, Mutacja: random, Fitness: 0.9914253761985896
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: two_points, Mutacja: swap, Fitness: 0.9926004661508968
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: two_points, Mutacja: gauss, Fitness: 0.9998019911177031
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: uniform, Mutacja: random, Fitness: 0.963822628945032
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: uniform, Mutacja: swap, Fitness: 0.9653062721431757
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: uniform, Mutacja: gauss, Fitness: 0.9998771638600913
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: <function custom_crossover at 0x0000013786CE0670>, Mutacja: random, Fitness: 0.9943977529129395
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: <function custom_crossover at 0x0000013786CE0670>, Mutacja: swap, Fitness: 0.9476088690891853
+Reprezentacja: real, Selekcja: rws, Krzy¿owanie: <function custom_crossover at 0x0000013786CE0670>, Mutacja: gauss, Fitness: 0.9995271286802809
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: single_point, Mutacja: random, Fitness: 0.9921700717707116
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: single_point, Mutacja: swap, Fitness: 0.80980247745556
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: single_point, Mutacja: gauss, Fitness: 0.999349760009648
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: two_points, Mutacja: random, Fitness: 0.8831264051824416
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: two_points, Mutacja: swap, Fitness: 0.5255044567423728
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: two_points, Mutacja: gauss, Fitness: 0.9994064914332385
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: uniform, Mutacja: random, Fitness: 0.794268859347554
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: uniform, Mutacja: swap, Fitness: 0.5977300550866778
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: uniform, Mutacja: gauss, Fitness: 0.9997274709379671
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: <function custom_crossover at 0x0000013786CE0670>, Mutacja: random, Fitness: 0.925726798303271
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: <function custom_crossover at 0x0000013786CE0670>, Mutacja: swap, Fitness: 0.8948649991244603
+Reprezentacja: real, Selekcja: random, Krzy¿owanie: <function custom_crossover at 0x0000013786CE0670>, Mutacja: gauss, Fitness: 0.980211519975719
