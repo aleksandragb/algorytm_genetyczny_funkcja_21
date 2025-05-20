@@ -136,14 +136,14 @@ def create_gui():
     ttk.Label(window, text="Prawdopodobieństwo krzyżowania (p):").grid(row=9, column=0, sticky="w")
     global uniform_prob_entry
     uniform_prob_entry = ttk.Entry(window)
-    uniform_prob_entry.grid(row=8, column=1, padx=5, pady=5)
+    uniform_prob_entry.grid(row=9, column=1, padx=5, pady=5)  # Poprawiony wiersz
     uniform_prob_entry.insert(0, "0.5")
 
     # Mutacja
     ttk.Label(window, text="Metoda mutacji:").grid(row=10, column=0, sticky="w")
     global mutation_method
     mutation_method = ttk.Combobox(window, values=["jednopunktowe", "dwupunktowe", "brzegowe", "równomierna", "gaussa", "żadne"])
-    mutation_method.grid(row=9, column=1, padx=5, pady=5)
+    mutation_method.grid(row=10, column=1, padx=5, pady=5)
     mutation_method.current(0)
 
     # Inwersja
