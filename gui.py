@@ -31,6 +31,7 @@ def start_algorithm():
             "alpha-beta": "alpha_beta",
             "liniowe": "linear", 
             "uśredniające": "averaging",
+            "mieszające typu alfa": "blx_alpha",
             "ziarniste": "granular",
             "żadne": "none"
         }
@@ -116,12 +117,10 @@ def create_gui():
     global selection_method
     selection_method = ttk.Combobox(window, values=["najlepszych osobników", "ruletki", "turniejowa"])
     selection_method.grid(row=6, column=1, padx=5, pady=5)
-    selection_method.current(0)
-
-    # Krzyżowanie
+    selection_method.current(0)    # Krzyżowanie
     ttk.Label(window, text="Metoda krzyżowania:").grid(row=7, column=0, sticky="w")
     global crossover_method
-    crossover_method = ttk.Combobox(window, values=["jednopunktowe", "dwupunktowe", "jednorodne", "arytmetyczne","alpha-beta", "liniowe", "uśredniające", "ziarniste", "żadne"])
+    crossover_method = ttk.Combobox(window, values=["jednopunktowe", "dwupunktowe", "jednorodne", "arytmetyczne","alpha-beta", "liniowe", "uśredniające", "mieszające typu alfa", "ziarniste", "żadne"])
     crossover_method.grid(row=7, column=1, padx=5, pady=5)
     crossover_method.current(0)
 

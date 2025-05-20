@@ -49,8 +49,8 @@ def crossover(parent1, parent2, method="one_point", alpha=0.5):
         child2 = [p2 if random.random() < 0.5 else p1 for p1, p2 in zip(parent1, parent2)]
 
     elif method == "arithmetic":
-            child1 = [alpha * p1 + (1 - alpha) * p2 for p1, p2 in zip(parent1, parent2)]
-            child2 = [(1 - alpha) * p1 + alpha * p2 for p1, p2 in zip(parent1, parent2)]
+        child1 = [alpha * p1 + (1 - alpha) * p2 for p1, p2 in zip(parent1, parent2)]
+        child2 = [(1 - alpha) * p1 + alpha * p2 for p1, p2 in zip(parent1, parent2)]
     
     elif method == "alpha_beta":
         beta = 1 - alpha  # lub dowolna inna wartość z GUI, jeżeli dodasz wejście dla beta
@@ -60,10 +60,22 @@ def crossover(parent1, parent2, method="one_point", alpha=0.5):
     elif method == "linear":
         child1 = [(p1 + p2) / 2 for p1, p2 in zip(parent1, parent2)]
         child2 = [2 * p1 - p2 for p1, p2 in zip(parent1, parent2)]
-
+        
     elif method == "averaging":
         child = [(p1 + p2) / 2 for p1, p2 in zip(parent1, parent2)]
         return child, child  # zwracamy dwa takie same dzieci
+        
+    elif method == "blx_alpha":
+        child1 = []
+        child2 = []
+        for p1, p2 in zip(parent1, parent2):
+            c_min = min(p1, p2)
+            c_max = max(p1, p2)
+            diff = c_max - c_min
+            lower = c_min - alpha * diff
+            upper = c_max + alpha * diff
+            child1.append(random.uniform(lower, upper))
+            child2.append(random.uniform(lower, upper))
 
     elif method == "none":
         child1 = parent1[:]
